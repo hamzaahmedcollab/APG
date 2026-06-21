@@ -160,7 +160,7 @@
   <nav>
     <ul>
       <li><a href="#websites">⚠️ Selling Websites</a></li>
-      <li><a href="#freegames">👾 Free Games</a></li>
+      <li><a href="#games">👾Games</a></li>
       <li><a href="#challenge">🔥 Weekly Challenge</a></li>
       <li><a href="#admins">‼️ Rules & Punishments ‼️</a></li>
       <li><a href="#prize">🏆 Prize Alerts</a></li>
@@ -176,8 +176,8 @@
       <p>We design and sell custom websites tailored to your needs. Contact us to get started!</p>
     </section>
 
-    <section id="freegames">
-      <h2>👾 Free Games</h2>
+    <section id="games">
+      <h2>👾Games</h2>
       <p>Enjoy our free PC game collection. New titles added regularly!</p>
       <a class="btn" href="https://hamzaelbarawy-oss.github.io/AllProGamerz_Cracks/Games5" target="_blank">
         🚀 Explore Cracks Collection
@@ -322,8 +322,7 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
       `;
       alert("✅ Profile updated");
     });
-      // Bad words list
-  const badWords = ["spam","scam","hack","FUCK","shit","STEAL","bitch", "asshole", "damn", "crap", "nigger" , "btch", "faggot", "cunt", "dick", "pussy", "slut", "whore", "bastard", "douche", "twat", "cock", "prick", "arse", "bollocks", "bugger", "bloody", "bollok", "arsehole", "wanker", "tosser", "git", "numpty", "plonker", "twit", "pillock", "muppet", "prat", "div", "knobhead", "bellend", "nobhead", "arsewipe", "shithead", "shite", "shitter", "shitty", "shitebag", "shitehawk", "shitepouch", "shiteskin", "shitey", "shitehead", "shiteface", "shitehole", "shitemonger", "shitesniffer", "shitetard", "shiteweasel", "shitewhore", "shitewitted", "shitey", "shitehead", "shiteface", "shitehole", "shitemonger", "shitesniffer", "shitetard", "shiteweasel", "shitewhore", "shitewitted","ksamk","kssamk","kssamk","ksamk","ksamk","ksamk"]; 
+
 
  document.getElementById("orderBtn").addEventListener("click", () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -342,13 +341,6 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
     return;
   }
 
-  // Check bad words
-  for (let word of badWords) {
-    if (prompt.toLowerCase().includes(word)) {
-      status.innerText = "❌ Request rejected: inappropriate content.";
-      return;
-    }
-  }
 
   // Normalize phone number: add +20 if missing
   let phone = storedUser.phone.trim();
@@ -430,13 +422,6 @@ document.getElementById("challengeBtn").addEventListener("click", () => {
     return;
   }
 
-  // Check bad words
-  for (let word of badWords) {
-    if (text.toLowerCase().includes(word)) {
-      status.innerText = "❌ Submission rejected: inappropriate content.";
-      return;
-    }
-  }
 
   // Normalize phone number
   let phone = storedUser.phone.trim();
