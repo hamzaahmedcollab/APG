@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AllProGamerz</title>
+  <title>🎮 AllProGamerz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/jpg" href="photo.png">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,514 +13,222 @@
       color: #f0f0f0;
       margin: 0;
       padding: 0;
-      scroll-behavior: smooth;
     }
+
     header {
       background: #ff4757;
       padding: 20px;
       text-align: center;
-      color: #fff;
     }
-    header img {
-      max-width: 120px;
-      height: auto;
-    }
-    #logoutBtn {
-      background: #ff4757; /* red */
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      margin-top: 15px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    #logoutBtn:hover {
-      background: #c0392b;
-    }
+
     nav {
       background: #2f3542;
       padding: 15px;
     }
+
     nav ul {
       list-style: none;
-      padding: 0;
-      margin: 0;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
+      padding: 0;
     }
+
     nav li {
-      margin: 8px 15px;
+      margin: 10px;
     }
+
     nav a {
-      text-decoration: none;
       color: #ffa502;
+      text-decoration: none;
       font-weight: bold;
     }
-    nav a:hover {
-      color: #ff6348;
-    }
+
     .container {
-      padding: 20px;
       max-width: 900px;
       margin: auto;
+      padding: 20px;
     }
+
     section {
       background: #1e1e1e;
       padding: 20px;
+      margin: 20px 0;
       border-radius: 8px;
-      margin: 30px 0;
     }
-    section h2 {
-      color: #ffa502;
-    }
+
     .btn {
       display: inline-block;
       background: #1e90ff;
-      color: #fff;
-      padding: 15px 25px;
+      color: white;
+      padding: 12px 20px;
       border-radius: 6px;
       text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      text-align: center;
-      margin-top: 15px;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: #3742fa;
-    }
-    .rules ul {
-      list-style: none;
-      padding: 0;
-    }
-    .rules li {
-      margin: 10px 0;
-      padding: 10px;
-      background: #2f3542;
-      border-radius: 6px;
-    }
-    .easter-egg {
-      display: none;
-      text-align: center;
-      margin-top: 20px;
-      font-size: 16px;
-      color: #00ff99;
-    }
-    footer {
-      background: #2f3542;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-      color: #aaa;
-    }
-    #profile {
-      margin-top: 30px;
-      background: #2f3542;
-      padding: 20px;
-      border-radius: 8px;
-      display: none;
-    }
-    #editProfileBtn {
-      background: #1e90ff;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
       margin-top: 10px;
       cursor: pointer;
-      font-weight: bold;
     }
-    #editProfileBtn:hover {
-      background: #3742fa;
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #2f3542;
+      color: #aaa;
     }
-    @media (max-width: 600px) {
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
-      nav li {
-        margin: 10px 0;
-      }
-      .btn {
-        width: 90%;
-        max-width: 300px;
-      }
+
+    #profileSection {
+      display: none;
+      background: #2f3542;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 8px;
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <img src="photo.png" alt="AllProGamerz Logo">
-    <h1> Welcome to<br>🎮 AllProGamerz 🎮</h1>
-    <!-- Red Sign Out Button -->
-    <button id="logoutBtn">🚪 Sign Out</button>
-  </header>
 
-  <nav>
-    <ul>
-      <li><a href="#games">👾Games</a></li>
-      <li><a href="#challenge">🔥 Weekly Challenge</a></li>
-      <li><a href="#admins">‼️ Rules & Punishments ‼️</a></li>
-      <li><a href="#prize">🏆 Prize Alerts</a></li>
-      <li><a href="#updates">⏫ Annual Updates</a></li>
-      <li><a href="#suggestions">💡 Contact Us</a></li>
-      <li><a href="#discord">👉 Invite Friends</a></li>
-    </ul>
-  </nav>
+<header>
+  <h1>🎮🔥 Welcome to AllProGamerz 🔥🎮</h1>
+  <button id="logoutBtn">🚪 Sign Out</button>
+</header>
 
-  <div class="container">
+<nav>
+  <ul>
+    <li><a href="#games">👾 Games</a></li>
+    <li><a href="#challenge">🔥 Weekly Challenge</a></li>
+    <li><a href="#prize">🏆 Prize Alerts</a></li>
+    <li><a href="#contact">📞 Contact</a></li>
+  </ul>
+</nav>
 
-    <section id="games">
-      <h2>👾Games</h2>
-      <p>Enjoy our PC game collection. New titles added regularly!</p>
-      <a class="btn" href="Games.html" target="_blank">
-        🚀 Explore Our Collection
-      </a>
-    </section>
+<div class="container">
 
-    <section id="challenge">
-<section id="challenge">
-  <h2>🔥 Weekly Challenge</h2>
-  <p>Post your best in-game clips. Every challenge lasts for one week, and winners earn rewards!</p>
+  <section id="games">
+    <h2>👾 Games</h2>
+    <a class="btn" href="Games.html" target="_blank">🚀 Explore Games</a>
+  </section>
 
-  <!-- Challenge Submission -->
-  <textarea id="challengeText" placeholder="Describe your challenge entry..." rows="3" style="width:100%;margin-top:10px;"></textarea>
-  <input type="file" id="challengeFiles" accept="video/*,image/*" multiple style="margin-top:10px;">
-  <div id="filePreview" style="margin-top:10px; display:flex; flex-wrap:wrap; gap:10px;"></div>
-  <button id="challengeBtn">Submit Challenge</button>
-  <p id="challengeStatus" style="color:#ffa502;margin-top:10px;"></p>
-</section>
+  <section id="challenge">
+    <h2>🔥 Weekly Challenge</h2>
+    <textarea id="challengeText" style="width:100%" rows="3"></textarea>
+    <input type="file" id="challengeFiles" multiple>
+    <button id="challengeBtn" class="btn">🎯 Submit Challenge</button>
+    <p id="challengeStatus"></p>
+  </section>
 
+  <section id="prize">
+    <h2>🏆 Prize Alerts</h2>
+    <p>🎁 Winners get free custom websites!</p>
+  </section>
 
-    </section>
+  <section id="contact">
+    <h2>📞 Contact Us</h2>
+    <a class="btn" href="https://wa.me/201110433394" target="_blank">
+      💬 WhatsApp Contact
+    </a>
+  </section>
 
-    <section id="admins" class="rules">
-      <h2>‼️ Group Rules & Punishments ‼️</h2>
-      <ul>
-        <li>Respect Everyone — No bullying or toxic behavior. <br><strong>Punishment:</strong> Warning → Kick → Ban.</li>
-        <li>Only Admins can post game content. <br><strong>Punishment:</strong> Post deleted → Warning → Mute.</li>
-        <li>Weekly Challenges last 1 week. Cheating/spam = disqualification. <br><strong>Punishment:</strong> Disqualification → Mute.</li>
-        <li>No Spam or Self-Promo. <br><strong>Punishment:</strong> Warning → Kick → Ban.</li>
-        <li>Suggestions must be respectful. <br><strong>Punishment:</strong> Harassment = Immediate ban.</li>
-        <li>Fake entries in competitions. <br><strong>Punishment:</strong> Disqualification → Mute.</li>
-        <li>Easter Egg Rule: 🥜 Adam imbaby is a peanut 🥜 <br><strong>Punishment:</strong> Just laughter 😅.</li>
-      </ul>
-    </section>
+  <section>
+    <h2>👤 Profile</h2>
+    <button id="viewProfileBtn" class="btn">👁️ View Profile</button>
 
-    <section id="prize">
-      <h2>🏆 Prize Alerts</h2>
-      <p>Winners get free custom websites as prizes.</p>
-    </section>
+    <div id="profileSection">
+      <p id="profileInfo"></p>
+    </div>
+  </section>
 
-    <section id="updates">
-      <h2>⏫ Annual Updates</h2>
-      <p>Every year we drop a big update with new features, games, and surprises.</p>
-    </section>
+  <section>
+    <h2>🖥️ Request a Custom Website</h2>
+    <textarea id="Prompt" rows="4" style="width:100%"></textarea>
+    <button id="Btn" class="btn">🚀 Submit Request</button>
+    <p id="Status"></p>
+  </section>
 
-    <section id="suggestions">
-      <h2>Contact Us</h2>
-      <p>Send us your ideas in private chat or contact us directly.</p>
-      <div class="contact">
-        <p>📞 Suggestions & Website Sales: 
-          <a href="https://wa.me/201110433394" target="_blank">
-            Chat on WhatsApp
-          </a>
-        </p>
-        <p>💻 Need a custom website? Reach out and we’ll build it for you!</p>
-      </div>
-    </section>
-    <section id="suggestGame">
-  <h2>🎮 Suggest a Game</h2>
-  <p>Have a game idea for AllProGamerz? Share it here!</p>
+</div>
 
-  <!-- Suggestion Submission -->
-  <textarea id="suggestText" placeholder="Write your game suggestion..." rows="3" style="width:100%;margin-top:10px;"></textarea>
-  <input type="url" id="suggestLink" placeholder="Optional link (e.g. game site)" style="width:100%;margin-top:10px;">
-  <button id="suggestBtn">Submit Suggestion</button>
-  <p id="suggestStatus" style="color:#ffa502;margin-top:10px;"></p>
-</section>
+<!-- ✅ FOOTER (FIXED HERE INSIDE FULL CODE) -->
+<footer>
+  © 2026 AllProGamerz 🎮🔥 <br>
+  🎮 Private friend-group project. Not a commercial service.
+</footer>
 
+<script>
 
-    <section id="discord">
-      <h2>👉 Invite Your Friends</h2>
-      <p>Bring your friends so they have a chance to win too!</p>
-      <p>Discord: <a href="https://discord.gg/rMfDMMqs6" target="_blank">Join Here</a></p>
-      <p>WhatsApp Group: 
-        <a href="https://chat.whatsapp.com/HrsiwK7Lz6JGOb4zRo6CYo" target="_blank">Join Here</a>
-      </p>
-    </section>
-
-      <!-- Profile Section -->
-<section id="profileSection" style="display:none; margin-top:20px;">
-  <h2>👤 Profile</h2>
-  <p id="profileInfo"></p>
-</section>
-
-<button id="viewProfileBtn">View Profile</button>
-
-
-    <section id="Website">
-      <h2>🖥️Request a Custom Website</h2>
-      <textarea id="Prompt" placeholder="Describe your website request..." rows="4" style="width:100%;margin-top:10px;"></textarea>
-      <button id="Btn">Submit Request</button>
-      <p id="Status" style="color:#ffa502;margin-top:10px;"></p>
-    </section>
-
-
-
-
-  <footer>
-    © 2026 AllProGamerz — made by Hamza Ahmed Elbarawy (group owner & website designer). Click here for a surprise!
-  </footer>
-
-  <script>
-    // Easter egg
-    document.querySelector('footer').addEventListener('click', function() {
-      document.getElementById('egg').style.display = 'block';
-    });
-
-  // Sign Out button logic
+// 🚪 Sign Out
 document.getElementById("logoutBtn").addEventListener("click", () => {
-  // Instead of removing the account, just mark signed-out state
   localStorage.setItem("isSignedIn", "false");
-  alert("🚪 Signed out");
-  window.location.href = "index.html"; // back to login page
+  window.location.href = "index.html";
 });
 
-
-    // Load profile on home page
-    const storedUser = JSON.parse(localStorage.getItem("user"));
-    if (storedUser) {
-      document.getElementById("profileInfo").innerHTML = `
-        <strong>Name:</strong> ${storedUser.firstName} ${storedUser.lastName}<br>
-        <strong>Email:</strong> ${storedUser.email}<br>
-        <strong>Phone:</strong> ${storedUser.phone}
-      `;
-      document.getElementById("profile").style.display = "block";
-    }
-
-    // Edit Profile
-    document.getElementById("editProfileBtn").addEventListener("click", () => {
-      if (!storedUser) return;
-
-      storedUser.firstName = prompt("Edit First Name:", storedUser.firstName) || storedUser.firstName;
-      storedUser.lastName = prompt("Edit Last Name:", storedUser.lastName) || storedUser.lastName;
-      storedUser.phone = prompt("Edit Phone Number:", storedUser.phone) || storedUser.phone;
-      storedUser.email = prompt("Edit Email:", storedUser.email) || storedUser.email;
-      storedUser.password = prompt("Edit Password:", storedUser.password) || storedUser.password;
-
-      localStorage.setItem("user", JSON.stringify(storedUser));
-      document.getElementById("profileInfo").innerHTML = `
-        <strong>Name:</strong> ${storedUser.firstName} ${storedUser.lastName}<br>
-        <strong>Email:</strong> ${storedUser.email}<br>
-        <strong>Phone:</strong> ${storedUser.phone}
-      `;
-      alert("✅ Profile updated");
-      // Load profile info from localStorage
+// 👤 Profile
 function loadProfile() {
-  const storedUser = JSON.parse(localStorage.getItem("user"));
-  if (storedUser) {
-    document.getElementById("profileInfo").innerHTML = `
-      <strong>Name:</strong> ${storedUser.firstName} ${storedUser.lastName}<br>
-      <strong>Email:</strong> ${storedUser.email}<br>
-      <strong>Phone:</strong> ${storedUser.phone}
-    `;
-  } else {
-    document.getElementById("profileInfo").innerText = "❌ No user profile found.";
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  if (!user) {
+    document.getElementById("profileInfo").innerText = "❌ No user found";
+    return;
   }
+
+  document.getElementById("profileInfo").innerHTML =
+    "👤 Name: " + user.firstName + " " + user.lastName + "<br>" +
+    "📧 Email: " + user.email + "<br>" +
+    "📱 Phone: " + user.phone;
 }
 
-// Toggle profile section
 document.getElementById("viewProfileBtn").addEventListener("click", () => {
-  const section = document.getElementById("profileSection");
+  const box = document.getElementById("profileSection");
 
-  if (section.style.display === "none") {
-    loadProfile();
-    section.style.display = "block";
-    document.getElementById("viewProfileBtn").innerText = "Hide Profile";
+  if (box.style.display === "block") {
+    box.style.display = "none";
   } else {
-    section.style.display = "none";
-    document.getElementById("viewProfileBtn").innerText = "View Profile";
+    loadProfile();
+    box.style.display = "block";
   }
 });
 
-    });
-
-
- document.getElementById("Btn").addEventListener("click", () => {
-  const storedUser = JSON.parse(localStorage.getItem("user"));
+// 🖥️ Website Request (WhatsApp)
+document.getElementById("Btn").addEventListener("click", () => {
+  const user = JSON.parse(localStorage.getItem("user"));
   const prompt = document.getElementById("Prompt").value.trim();
   const status = document.getElementById("Status");
 
-  // Check if user exists
-  if (!storedUser) {
-    status.innerText = "❌ No account found. Please sign up first.";
-    return;
-  }
+  if (!user) return status.innerText = "❌ No account found";
+  if (!prompt) return status.innerText = "❌ Write your request";
 
-  // Validate prompt
-  if (!prompt) {
-    status.innerText = "❌ Please enter your request.";
-    return;
-  }
+  const msg =
+    "👤 " + user.firstName + " " + user.lastName + "\n" +
+    "📧 " + user.email + "\n" +
+    "📱 " + user.phone + "\n\n" +
+    "🖥️ " + prompt;
 
+  const url = "https://wa.me/201110433394?text=" + encodeURIComponent(msg);
+  window.open(url, "_blank");
 
-  // Normalize phone number: add +20 if missing
-  let phone = storedUser.phone.trim();
-  if (!phone.startsWith("+20")) {
-    // If user typed "01123456789", convert to "+201123456789"
-    if (/^0\d{9}$/.test(phone)) {
-      phone = "+2" + phone.substring(1);
-    } else {
-      phone = "+2" + phone;
-    }
-  }
-
-  // Validate phone number format (Egypt +20 followed by 10 digits)
-  const phoneRegex = /^\+20\d{10}$/;
-  if (!phoneRegex.test(phone)) {
-    status.innerText = "❌ Invalid phone number. Please update your profile with a valid number.";
-    return;
-  }
-
-  // Build message
-  const message = `${storedUser.firstName} ${storedUser.lastName}\n${storedUser.email}\n${phone}\n${prompt}`;
-
-  // Encode message for WhatsApp
-  const encodedMessage = encodeURIComponent(message);
-
-  // Open WhatsApp chat with your number
-  const whatsappUrl = `https://wa.me/201110433394?text=${encodedMessage}`;
-  window.open(whatsappUrl, "_blank");
-
-  status.innerText = "✅ Order sent via WhatsApp!";
-});
-// Show file previews
-document.getElementById("challengeFiles").addEventListener("change", () => {
-  const preview = document.getElementById("filePreview");
-  preview.innerHTML = ""; 
-  const files = document.getElementById("challengeFiles").files;
-
-  for (let file of files) {
-    const fileType = file.type;
-    const fileDiv = document.createElement("div");
-    fileDiv.style.margin = "5px";
-    fileDiv.style.background = "#2f3542";
-    fileDiv.style.padding = "5px";
-    fileDiv.style.borderRadius = "6px";
-
-    if (fileType.startsWith("image/")) {
-      const img = document.createElement("img");
-      img.src = URL.createObjectURL(file);
-      img.style.maxWidth = "150px";
-      img.style.borderRadius = "6px";
-      fileDiv.appendChild(img);
-    } else if (fileType.startsWith("video/")) {
-      const vid = document.createElement("video");
-      vid.src = URL.createObjectURL(file);
-      vid.controls = true;
-      vid.style.maxWidth = "200px";
-      fileDiv.appendChild(vid);
-    } else {
-      fileDiv.innerText = file.name;
-    }
-
-    preview.appendChild(fileDiv);
-  }
+  status.innerText = "✅ Sent!";
 });
 
+// 🎮 Challenge Submit
 document.getElementById("challengeBtn").addEventListener("click", () => {
-  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(localStorage.getItem("user"));
   const text = document.getElementById("challengeText").value.trim();
-  const files = document.getElementById("challengeFiles").files;
   const status = document.getElementById("challengeStatus");
 
-  if (!storedUser) {
-    status.innerText = "❌ No account found. Please sign up first.";
-    return;
-  }
+  if (!user) return status.innerText = "❌ No account";
+  if (!text) return status.innerText = "❌ Write something";
 
-  if (!text) {
-    status.innerText = "❌ Please enter a description.";
-    return;
-  }
+  const msg =
+    "👤 " + user.firstName + " " + user.lastName + "\n" +
+    "📧 " + user.email + "\n" +
+    "📱 " + user.phone + "\n\n" +
+    "🎯 " + text;
 
+  const url = "https://wa.me/201144604623?text=" + encodeURIComponent(msg);
+  window.open(url, "_blank");
 
-  // Normalize phone number
-  let phone = storedUser.phone.trim();
-  if (!phone.startsWith("+20")) {
-    if (/^0\d{9}$/.test(phone)) {
-      phone = "+2" + phone.substring(1);
-    } else {
-      phone = "+2" + phone;
-    }
-  }
-
-  const phoneRegex = /^\+20\d{10}$/;
-  if (!phoneRegex.test(phone)) {
-    status.innerText = "❌ Invalid phone number. Please update your profile.";
-    return;
-  }
-
-  // Build message
-  let message = `${storedUser.firstName} ${storedUser.lastName}\n${storedUser.email}\n${phone}\n${text}`;
-  if (files.length > 0) {
-    message += `\n[Reminder: Please attach ${files.length} file(s) manually in WhatsApp]`;
-  }
-
-  const encodedMessage = encodeURIComponent(message);
-  const whatsappUrl = `https://wa.me/201144604623?text=${encodedMessage}`;
-  window.open(whatsappUrl, "_blank");
-
-  status.innerText = "✅ Challenge info sent! Now attach your files in WhatsApp.";
-});
-document.getElementById("suggestBtn").addEventListener("click", () => {
-  const storedUser = JSON.parse(localStorage.getItem("user"));
-  const text = document.getElementById("suggestText").value.trim();
-  const link = document.getElementById("suggestLink").value.trim();
-  const status = document.getElementById("suggestStatus");
-
-  if (!storedUser) {
-    status.innerText = "❌ No account found. Please sign up first.";
-    return;
-  }
-
-  if (!text) {
-    status.innerText = "❌ Please enter your suggestion.";
-    return;
-  }
-
-  // Normalize phone number
-  let phone = storedUser.phone.trim();
-  if (!phone.startsWith("+20")) {
-    if (/^0\d{9}$/.test(phone)) {
-      phone = "+2" + phone.substring(1);
-    } else {
-      phone = "+2" + phone;
-    }
-  }
-
-  const phoneRegex = /^\+20\d{10}$/;
-  if (!phoneRegex.test(phone)) {
-    status.innerText = "❌ Invalid phone number. Please update your profile.";
-    return;
-  }
-
-  // Build message
-  let message = `${storedUser.firstName} ${storedUser.lastName}\n${storedUser.email}\n${phone}\n${text}`;
-  if (link) {
-    message += `\nLink: ${link}`;
-  }
-
-  const encodedMessage = encodeURIComponent(message);
-  const whatsappUrl = `https://wa.me/201144604623?text=${encodedMessage}`;
-  window.open(whatsappUrl, "_blank");
-
-  status.innerText = "✅ Suggestion info sent via WhatsApp!";
+  status.innerText = "✅ Sent!";
 });
 
-  </script>
+</script>
+
 </body>
 </html>
