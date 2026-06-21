@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AllProGamerz - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #f0f0f0;
+      text-align: center;
+      padding: 40px;
+    }
+    input {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      width: 250px;
+      border-radius: 6px;
+      border: none;
+    }
+    button {
+      background: #1e90ff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      margin: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #3742fa;
+    }
+    #userStatus {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #ffa502;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔑 AllProGamerz Sign In / Sign Up</h1>
+
+  <!-- Sign Up / Sign In Form -->
+  <input type="text" id="firstName" placeholder="First Name">
+  <input type="text" id="lastName" placeholder="Last Name">
+  <input type="email" id="email" placeholder="Email">
+  <input type="tel" id="phone" placeholder="Phone Number">
+  <input type="password" id="password" placeholder="Password">
+  <button id="signupBtn">Sign Up</button>
+  <button id="signinBtn">Sign In</button>
+
+  <p id="userStatus">Not signed in</p>
+
+  <script>
+    const status = document.getElementById("userStatus");
+
+    // Sign Up
+    document.getElementById("signupBtn").addEventListener("click", () => {
+      const user = {
+        firstName: document.getElementById("firstName").value,
+        lastName: document.getElementById("lastName").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        password: document.getElementById("password").value
+      };
+      localStorage.setItem("user", JSON.stringify(user));
+      status.innerText = "✅ Account created for " + user.email;
+      // Redirect to home page
+      window.location.href = "home.html";
+    });
+
+  // Sign In
+document.getElementById("signinBtn").addEventListener("click", () => {
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (!storedUser) {
+    alert("❌ No account found. Please sign up first.");
+    return;
+  }
+
+  if (storedUser.email === email && storedUser.password === password) {
+    alert("✅ Signed in as " + storedUser.email);
+    // Redirect to home page
+    window.location.href = "home.html";
+  } else {
+    alert("❌ Invalid email or password");
+  }
+});
+
+  </script>
+</body>
+</html>

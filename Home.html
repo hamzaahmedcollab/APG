@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AllProGamerz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpg" href="photo.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #ff4757;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+    }
+    header img {
+      max-width: 120px;
+      height: auto;
+    }
+    #logoutBtn {
+      background: #ff4757; /* red */
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 15px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #logoutBtn:hover {
+      background: #c0392b;
+    }
+    nav {
+      background: #2f3542;
+      padding: 15px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav li {
+      margin: 8px 15px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #ffa502;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ff6348;
+    }
+    .container {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    section {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 30px 0;
+    }
+    section h2 {
+      color: #ffa502;
+    }
+    .btn {
+      display: inline-block;
+      background: #1e90ff;
+      color: #fff;
+      padding: 15px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 15px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #3742fa;
+    }
+    .rules ul {
+      list-style: none;
+      padding: 0;
+    }
+    .rules li {
+      margin: 10px 0;
+      padding: 10px;
+      background: #2f3542;
+      border-radius: 6px;
+    }
+    .easter-egg {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 16px;
+      color: #00ff99;
+    }
+    footer {
+      background: #2f3542;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      color: #aaa;
+    }
+    #profile {
+      margin-top: 30px;
+      background: #2f3542;
+      padding: 20px;
+      border-radius: 8px;
+      display: none;
+    }
+    #editProfileBtn {
+      background: #1e90ff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #editProfileBtn:hover {
+      background: #3742fa;
+    }
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav li {
+        margin: 10px 0;
+      }
+      .btn {
+        width: 90%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="photo.png" alt="AllProGamerz Logo">
+    <h1> Welcome to<br>🎮 AllProGamerz 🎮</h1>
+    <!-- Red Sign Out Button -->
+    <button id="logoutBtn">🚪 Sign Out</button>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#websites">⚠️ Selling Websites</a></li>
+      <li><a href="#freegames">👾 Free Games</a></li>
+      <li><a href="#challenge">🔥 Weekly Challenge</a></li>
+      <li><a href="#admins">‼️ Rules & Punishments ‼️</a></li>
+      <li><a href="#prize">🏆 Prize Alerts</a></li>
+      <li><a href="#updates">⏫ Annual Updates</a></li>
+      <li><a href="#suggestions">💡 Contact Us</a></li>
+      <li><a href="#discord">👉 Invite Friends</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section id="websites">
+      <h2>⚠️ Selling Custom Websites</h2>
+      <p>We design and sell custom websites tailored to your needs. Contact us to get started!</p>
+    </section>
+
+    <section id="freegames">
+      <h2>👾 Free Games</h2>
+      <p>Enjoy our free PC game collection. New titles added regularly!</p>
+      <a class="btn" href="https://hamzaelbarawy-oss.github.io/AllProGamerz_Cracks/Games5" target="_blank">
+        🚀 Explore Cracks Collection
+      </a>
+    </section>
+
+    <section id="challenge">
+<section id="challenge">
+  <h2>🔥 Weekly Challenge</h2>
+  <p>Post your best in-game clips. Every challenge lasts for one week, and winners earn rewards!</p>
+
+  <!-- Challenge Submission -->
+  <textarea id="challengeText" placeholder="Describe your challenge entry..." rows="3" style="width:100%;margin-top:10px;"></textarea>
+  <input type="file" id="challengeFiles" accept="video/*,image/*" multiple style="margin-top:10px;">
+  <div id="filePreview" style="margin-top:10px; display:flex; flex-wrap:wrap; gap:10px;"></div>
+  <button id="challengeBtn">Submit Challenge</button>
+  <p id="challengeStatus" style="color:#ffa502;margin-top:10px;"></p>
+</section>
+
+
+    </section>
+
+    <section id="admins" class="rules">
+      <h2>‼️ Group Rules & Punishments ‼️</h2>
+      <ul>
+        <li>Respect Everyone — No bullying or toxic behavior. <br><strong>Punishment:</strong> Warning → Kick → Ban.</li>
+        <li>Only Admins can post game content. <br><strong>Punishment:</strong> Post deleted → Warning → Mute.</li>
+        <li>Weekly Challenges last 1 week. Cheating/spam = disqualification. <br><strong>Punishment:</strong> Disqualification → Mute.</li>
+        <li>No Spam or Self-Promo. <br><strong>Punishment:</strong> Warning → Kick → Ban.</li>
+        <li>Games are free for everyone — don’t resell. <br><strong>Punishment:</strong> Removal → Blacklist.</li>
+        <li>Suggestions must be respectful. <br><strong>Punishment:</strong> Harassment = Immediate ban.</li>
+        <li>Fake entries in competitions. <br><strong>Punishment:</strong> Disqualification → Mute.</li>
+        <li>Easter Egg Rule: 🥜 Adam imbaby is a peanut 🥜 <br><strong>Punishment:</strong> Just laughter 😅.</li>
+      </ul>
+    </section>
+
+    <section id="prize">
+      <h2>🏆 Prize Alerts</h2>
+      <p>Winners get free custom websites as prizes.</p>
+    </section>
+
+    <section id="updates">
+      <h2>⏫ Annual Updates</h2>
+      <p>Every year we drop a big update with new features, games, and surprises.</p>
+    </section>
+
+    <section id="suggestions">
+      <h2>Contact Us</h2>
+      <p>Send us your ideas in private chat or contact us directly.</p>
+      <div class="contact">
+        <p>📞 Suggestions & Website Sales: 
+          <a href="https://wa.me/201110433394" target="_blank">
+            Chat on WhatsApp
+          </a>
+        </p>
+        <p>💻 Need a custom website? Reach out and we’ll build it for you!</p>
+      </div>
+    </section>
+    <section id="suggestGame">
+  <h2>🎮 Suggest a Game</h2>
+  <p>Have a game idea for AllProGamerz? Share it here!</p>
+
+  <!-- Suggestion Submission -->
+  <textarea id="suggestText" placeholder="Write your game suggestion..." rows="3" style="width:100%;margin-top:10px;"></textarea>
+  <input type="url" id="suggestLink" placeholder="Optional link (e.g. game site)" style="width:100%;margin-top:10px;">
+  <button id="suggestBtn">Submit Suggestion</button>
+  <p id="suggestStatus" style="color:#ffa502;margin-top:10px;"></p>
+</section>
+
+
+    <section id="discord">
+      <h2>👉 Invite Your Friends</h2>
+      <p>Bring your friends so they have a chance to win too!</p>
+      <p>Discord: <a href="https://discord.gg/rMfDMMqs6" target="_blank">Join Here</a></p>
+      <p>WhatsApp Group: 
+        <a href="https://chat.whatsapp.com/HrsiwK7Lz6JGOb4zRo6CYo" target="_blank">Join Here</a>
+      </p>
+    </section>
+
+      <!-- Profile Section -->
+    <section id="profile">
+      <h2>👤 Profile</h2>
+      <p id="profileInfo"></p>
+      <button id="editProfileBtn">Edit Profile</button>
+    </section>
+
+    <section id="orderWebsite">
+      <h2>🖥️ Order a Custom Website</h2>
+      <textarea id="orderPrompt" placeholder="Describe your website request..." rows="4" style="width:100%;margin-top:10px;"></textarea>
+      <button id="orderBtn">Submit Order</button>
+      <p id="orderStatus" style="color:#ffa502;margin-top:10px;"></p>
+    </section>
+
+
+
+
+  <footer>
+    © 2026 AllProGamerz — made by Hamza Ahmed Elbarawy (group owner & website designer). Click here for a surprise!
+  </footer>
+
+  <script>
+    // Easter egg
+    document.querySelector('footer').addEventListener('click', function() {
+      document.getElementById('egg').style.display = 'block';
+    });
+
+  // Sign Out button logic
+document.getElementById("logoutBtn").addEventListener("click", () => {
+  // Instead of removing the account, just mark signed-out state
+  localStorage.setItem("isSignedIn", "false");
+  alert("🚪 Signed out");
+  window.location.href = "index.html"; // back to login page
+});
+
+
+    // Load profile on home page
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    if (storedUser) {
+      document.getElementById("profileInfo").innerHTML = `
+        <strong>Name:</strong> ${storedUser.firstName} ${storedUser.lastName}<br>
+        <strong>Email:</strong> ${storedUser.email}<br>
+        <strong>Phone:</strong> ${storedUser.phone}
+      `;
+      document.getElementById("profile").style.display = "block";
+    }
+
+    // Edit Profile
+    document.getElementById("editProfileBtn").addEventListener("click", () => {
+      if (!storedUser) return;
+
+      storedUser.firstName = prompt("Edit First Name:", storedUser.firstName) || storedUser.firstName;
+      storedUser.lastName = prompt("Edit Last Name:", storedUser.lastName) || storedUser.lastName;
+      storedUser.phone = prompt("Edit Phone Number:", storedUser.phone) || storedUser.phone;
+      storedUser.email = prompt("Edit Email:", storedUser.email) || storedUser.email;
+      storedUser.password = prompt("Edit Password:", storedUser.password) || storedUser.password;
+
+      localStorage.setItem("user", JSON.stringify(storedUser));
+      document.getElementById("profileInfo").innerHTML = `
+        <strong>Name:</strong> ${storedUser.firstName} ${storedUser.lastName}<br>
+        <strong>Email:</strong> ${storedUser.email}<br>
+        <strong>Phone:</strong> ${storedUser.phone}
+      `;
+      alert("✅ Profile updated");
+    });
+      // Bad words list
+  const badWords = ["spam","scam","hack","FUCK","shit","STEAL","bitch", "asshole", "damn", "crap", "nigger" , "btch", "faggot", "cunt", "dick", "pussy", "slut", "whore", "bastard", "douche", "twat", "cock", "prick", "arse", "bollocks", "bugger", "bloody", "bollok", "arsehole", "wanker", "tosser", "git", "numpty", "plonker", "twit", "pillock", "muppet", "prat", "div", "knobhead", "bellend", "nobhead", "arsewipe", "shithead", "shite", "shitter", "shitty", "shitebag", "shitehawk", "shitepouch", "shiteskin", "shitey", "shitehead", "shiteface", "shitehole", "shitemonger", "shitesniffer", "shitetard", "shiteweasel", "shitewhore", "shitewitted", "shitey", "shitehead", "shiteface", "shitehole", "shitemonger", "shitesniffer", "shitetard", "shiteweasel", "shitewhore", "shitewitted","ksamk","kssamk","kssamk","ksamk","ksamk","ksamk"]; 
+
+ document.getElementById("orderBtn").addEventListener("click", () => {
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const prompt = document.getElementById("orderPrompt").value.trim();
+  const status = document.getElementById("orderStatus");
+
+  // Check if user exists
+  if (!storedUser) {
+    status.innerText = "❌ No account found. Please sign up first.";
+    return;
+  }
+
+  // Validate prompt
+  if (!prompt) {
+    status.innerText = "❌ Please enter your request.";
+    return;
+  }
+
+  // Check bad words
+  for (let word of badWords) {
+    if (prompt.toLowerCase().includes(word)) {
+      status.innerText = "❌ Request rejected: inappropriate content.";
+      return;
+    }
+  }
+
+  // Normalize phone number: add +20 if missing
+  let phone = storedUser.phone.trim();
+  if (!phone.startsWith("+20")) {
+    // If user typed "01123456789", convert to "+201123456789"
+    if (/^0\d{9}$/.test(phone)) {
+      phone = "+2" + phone.substring(1);
+    } else {
+      phone = "+2" + phone;
+    }
+  }
+
+  // Validate phone number format (Egypt +20 followed by 10 digits)
+  const phoneRegex = /^\+20\d{10}$/;
+  if (!phoneRegex.test(phone)) {
+    status.innerText = "❌ Invalid phone number. Please update your profile with a valid number.";
+    return;
+  }
+
+  // Build message
+  const message = `${storedUser.firstName} ${storedUser.lastName}\n${storedUser.email}\n${phone}\n${prompt}`;
+
+  // Encode message for WhatsApp
+  const encodedMessage = encodeURIComponent(message);
+
+  // Open WhatsApp chat with your number
+  const whatsappUrl = `https://wa.me/201110433394?text=${encodedMessage}`;
+  window.open(whatsappUrl, "_blank");
+
+  status.innerText = "✅ Order sent via WhatsApp!";
+});
+// Show file previews
+document.getElementById("challengeFiles").addEventListener("change", () => {
+  const preview = document.getElementById("filePreview");
+  preview.innerHTML = ""; 
+  const files = document.getElementById("challengeFiles").files;
+
+  for (let file of files) {
+    const fileType = file.type;
+    const fileDiv = document.createElement("div");
+    fileDiv.style.margin = "5px";
+    fileDiv.style.background = "#2f3542";
+    fileDiv.style.padding = "5px";
+    fileDiv.style.borderRadius = "6px";
+
+    if (fileType.startsWith("image/")) {
+      const img = document.createElement("img");
+      img.src = URL.createObjectURL(file);
+      img.style.maxWidth = "150px";
+      img.style.borderRadius = "6px";
+      fileDiv.appendChild(img);
+    } else if (fileType.startsWith("video/")) {
+      const vid = document.createElement("video");
+      vid.src = URL.createObjectURL(file);
+      vid.controls = true;
+      vid.style.maxWidth = "200px";
+      fileDiv.appendChild(vid);
+    } else {
+      fileDiv.innerText = file.name;
+    }
+
+    preview.appendChild(fileDiv);
+  }
+});
+
+document.getElementById("challengeBtn").addEventListener("click", () => {
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const text = document.getElementById("challengeText").value.trim();
+  const files = document.getElementById("challengeFiles").files;
+  const status = document.getElementById("challengeStatus");
+
+  if (!storedUser) {
+    status.innerText = "❌ No account found. Please sign up first.";
+    return;
+  }
+
+  if (!text) {
+    status.innerText = "❌ Please enter a description.";
+    return;
+  }
+
+  // Check bad words
+  for (let word of badWords) {
+    if (text.toLowerCase().includes(word)) {
+      status.innerText = "❌ Submission rejected: inappropriate content.";
+      return;
+    }
+  }
+
+  // Normalize phone number
+  let phone = storedUser.phone.trim();
+  if (!phone.startsWith("+20")) {
+    if (/^0\d{9}$/.test(phone)) {
+      phone = "+2" + phone.substring(1);
+    } else {
+      phone = "+2" + phone;
+    }
+  }
+
+  const phoneRegex = /^\+20\d{10}$/;
+  if (!phoneRegex.test(phone)) {
+    status.innerText = "❌ Invalid phone number. Please update your profile.";
+    return;
+  }
+
+  // Build message
+  let message = `${storedUser.firstName} ${storedUser.lastName}\n${storedUser.email}\n${phone}\n${text}`;
+  if (files.length > 0) {
+    message += `\n[Reminder: Please attach ${files.length} file(s) manually in WhatsApp]`;
+  }
+
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappUrl = `https://wa.me/201144604623?text=${encodedMessage}`;
+  window.open(whatsappUrl, "_blank");
+
+  status.innerText = "✅ Challenge info sent! Now attach your files in WhatsApp.";
+});
+document.getElementById("suggestBtn").addEventListener("click", () => {
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const text = document.getElementById("suggestText").value.trim();
+  const link = document.getElementById("suggestLink").value.trim();
+  const status = document.getElementById("suggestStatus");
+
+  if (!storedUser) {
+    status.innerText = "❌ No account found. Please sign up first.";
+    return;
+  }
+
+  if (!text) {
+    status.innerText = "❌ Please enter your suggestion.";
+    return;
+  }
+
+  // Normalize phone number
+  let phone = storedUser.phone.trim();
+  if (!phone.startsWith("+20")) {
+    if (/^0\d{9}$/.test(phone)) {
+      phone = "+2" + phone.substring(1);
+    } else {
+      phone = "+2" + phone;
+    }
+  }
+
+  const phoneRegex = /^\+20\d{10}$/;
+  if (!phoneRegex.test(phone)) {
+    status.innerText = "❌ Invalid phone number. Please update your profile.";
+    return;
+  }
+
+  // Build message
+  let message = `${storedUser.firstName} ${storedUser.lastName}\n${storedUser.email}\n${phone}\n${text}`;
+  if (link) {
+    message += `\nLink: ${link}`;
+  }
+
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappUrl = `https://wa.me/201144604623?text=${encodedMessage}`;
+  window.open(whatsappUrl, "_blank");
+
+  status.innerText = "✅ Suggestion info sent via WhatsApp!";
+});
+
+  </script>
+</body>
+</html>
