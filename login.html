@@ -2,19 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AllProGamerz - Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/index.css">
+  <title>Sign in — AllProGamerz</title>
+  <link rel="stylesheet" href="styles/login.css">
 </head>
 <body>
-  <h1>AllProGamerz Log In</h1>
+  <div class="card">
+    <h1>AP<span>G</span></h1>
+    <p class="sub">Sign in to your account</p>
 
-  <!-- Sign Up / Sign In Form -->
-  <input type="email" id="email" placeholder="Email">
-  <input type="password" id="password" placeholder="Password">
-  <button id="signinBtn">Sign In</button>
-   
-  <p id="userStatus">Not signed in</p>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="you@example.com">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password">
+    </div>
+
+    <button class="btn btn-primary" id="signinBtn">Sign in</button>
+    <p class="status" id="userStatus"></p>
+
+    <p class="alt-link">Don't have an account? <a href="signup.html">Sign up</a></p>
+    <a href="index.html" class="back-link">&larr; Back to home</a>
+  </div>
 
   <script src="scripts/login.js"></script>
 </body>

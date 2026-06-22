@@ -2,199 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>🎮 AllProGamerz // Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AllProGamerz</title>
   <link rel="icon" type="image/jpg" href="photo.png">
-  <!-- 🟢 Linking your clean stylesheet configuration -->
   <link rel="stylesheet" href="styles/index.css">
 </head>
-
 <body>
+  <header>
+    <div class="logo">AP<span>G</span></div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="login.html">Sign in</a>
+      <a href="signup.html" class="btn btn-primary">Get started</a>
+    </nav>
+  </header>
 
-<header>
-  <h1>🎮🔥 Welcome to AllProGamerz 🔥🎮</h1>
-  <button id="logoutBtn">🚪 Sign Out</button>
-</header>
-
-<nav>
-  <ul>
-    <li><a href="#games">👾 Games</a></li>
-    <li><a href="#challenge">🔥 Weekly Challenge</a></li>
-    <li><a href="#prize">🏆 Prize Alerts</a></li>
-    <li><a href="#contact">📞 Contact</a></li>
-  </ul>
-</nav>
-
-<!-- Main container grid stays hidden until secure session handshake verifies -->
-<div id="mainWorkspace" class="container" style="display: none;">
-
-  <section id="games">
-    <h2>👾 Games</h2>
-    <a class="btn" href="Games.html" target="_blank">🚀 Explore Games</a>
-  </section>
-
-  <section id="challenge">
-    <h2>🔥 Weekly Challenge</h2>
-    <textarea id="challengeText" rows="3" placeholder="Describe your challenge proof details..."></textarea>
-    <input type="file" id="challengeFiles" multiple>
-    <button id="challengeBtn">🎯 Submit Challenge</button>
-    <p id="challengeStatus" style="color: #ffa502; margin-top: 10px;"></p>
-  </section>
-
-  <section id="prize">
-    <h2>🏆 Prize Alerts</h2>
-    <p>🎁 Winners get free custom websites!</p>
-  </section>
-
-  <section id="contact">
-    <h2>📞 Contact Us</h2>
-    <a class="btn" href="https://wa.me" target="_blank">
-      💬 WhatsApp Contact
-    </a>
-  </section>
-
-  <section>
-    <h2>👤 Profile</h2>
-    <button id="viewProfileBtn">👁️ View Profile</button>
-
-    <div id="profileSection">
-      <p id="profileInfo">⏳ Fetching your secure profile data...</p>
-
-      <a id="inviteBtn" class="btn" href="https://whatsapp.com" target="_blank">
-        📩 Invite Friends
-      </a>
-
-      <div id="editProfile">
-        <h3>✏️ Edit Profile</h3>
-        <input type="text" id="editFirstName" placeholder="First Name">
-        <input type="text" id="editLastName" placeholder="Last Name">
-        <input type="email" id="editEmail" placeholder="Email" disabled>
-        <input type="text" id="editPhone" placeholder="Phone">
-        <button id="saveProfileBtn">💾 Save Changes</button>
-        <p id="editStatus" style="color:#ffa502; margin-top:10px;"></p>
-      </div>
+  <section class="hero">
+    <h1>Game with <span>the squad.</span></h1>
+    <p>Private game repos, weekly challenges, and prize drops — only for the crew.</p>
+    <div class="btn-group">
+      <a href="signup.html" class="btn btn-primary">Join the club</a>
+      <a href="login.html" class="btn btn-ghost">I'm already in</a>
     </div>
   </section>
 
-  <section>
-    <h2>🖥️ Request a Custom Website</h2>
-    <textarea id="Prompt" rows="4" placeholder="Describe the layout theme ideas or layout pages you want built..."></textarea>
-    <button id="Btn">🚀 Submit Request</button>
-    <p id="Status" style="color: #ffa502; margin-top: 10px;"></p>
+  <section class="features" id="features">
+    <div class="feature-card">
+      <div class="icon">🎮</div>
+      <h3>Game vault</h3>
+      <p>Direct downloads and torrents for your favorite titles, all in one place.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🔥</div>
+      <h3>Weekly challenges</h3>
+      <p>Throw down the gauntlet. Submit proof, claim bragging rights.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🏆</div>
+      <h3>Prize alerts</h3>
+      <p>Winners get custom websites and other perks. Yes, really.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🛠️</div>
+      <h3>Custom sites</h3>
+      <p>Request a personalized website. We'll build it for you.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">📞</div>
+      <h3>Direct contact</h3>
+      <p>Hit us on WhatsApp when you need something.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🔒</div>
+      <h3>Private access</h3>
+      <p>Only verified members get in. No randoms.</p>
+    </div>
   </section>
 
-</div>
-
-<footer>
-  © 2026 AllProGamerz 🎮🔥 <br>
-  🎮 Private friend-group project. Stays online 24/7.
-</footer>
-
-<script>
-let authenticatedUser = null;
-
-// Validate active user authentication tokens against your live Vercel cluster deployment
-function verifySession() {
-  fetch('https://apg-api.vercel.app/api/check-session', { credentials: 'include' })
-    .then(response => {
-      if (response.status === 200) {
-        return response.json();
-      } else {
-        window.location.href = "login.html";
-      }
-    })
-    .then(data => {
-      if (data && data.status === 'authenticated') {
-        authenticatedUser = data.user;
-        document.getElementById("mainWorkspace").style.display = "block";
-      }
-    })
-    .catch(err => {
-      console.error(err);
-      window.location.href = "login.html";
-    });
-}
-
-verifySession();
-
-// Secure Logout Route Sequence
-document.getElementById("logoutBtn").addEventListener("click", () => {
-  fetch('https://apg-api.vercel.app/api/logout', { 
-    method: 'POST', 
-    credentials: 'include' 
-  })
-  .then(() => {
-    window.location.href = "login.html";
-  })
-  .catch(() => {
-    window.location.href = "login.html";
-  });
-});
-
-function populateProfileUI() {
-  if (!authenticatedUser) {
-    document.getElementById("profileInfo").innerText = "❌ Session state invalid.";
-    return;
-  }
-  document.getElementById("profileInfo").innerHTML =
-    "📧 Identity: " + authenticatedUser.email + "<br>" +
-    "🛡️ Access: " + (authenticatedUser.verified ? "✅ Fully Verified Operative" : "❌ Unverified");
-
-  document.getElementById("editEmail").value = authenticatedUser.email;
-}
-
-document.getElementById("viewProfileBtn").addEventListener("click", () => {
-  const box = document.getElementById("profileSection");
-  if (box.style.display === "block") {
-    box.style.display = "none";
-    document.getElementById("viewProfileBtn").innerText = "👁️ View Profile";
-  } else {
-    populateProfileUI();
-    box.style.display = "block";
-    document.getElementById("viewProfileBtn").innerText = "🙈 Hide Profile";
-  }
-});
-
-// Save locally for now / Hook to an database updater later
-document.getElementById("saveProfileBtn").addEventListener("click", () => {
-  const firstName = document.getElementById("editFirstName").value.trim();
-  const lastName = document.getElementById("editLastName").value.trim();
-  const phone = document.getElementById("editPhone").value.trim();
-  const status = document.getElementById("editStatus");
-  
-  if (!firstName || !lastName || !phone) {
-    status.innerText = "❌ Please fill all dynamic input fields.";
-    return;
-  }
-  status.innerText = "✅ Profile updated in memory!";
-});
-
-// Submit Prompts over WhatsApp API
-document.getElementById("Btn").addEventListener("click", () => {
-  const prompt = document.getElementById("Prompt").value.trim();
-  const status = document.getElementById("Status");
-  if (!authenticatedUser) return status.innerText = "❌ No active session found.";
-  if (!prompt) return status.innerText = "❌ Write your prompt request.";
-  
-  const msg = "👤 " + authenticatedUser.email + "\n\n🖥️ Prompt: " + prompt;
-  const url = "https://wa.me?text=" + encodeURIComponent(msg);
-  window.open(url, "_blank");
-  status.innerText = "✅ Opened in WhatsApp!";
-});
-
-// Submit Challenge logs
-document.getElementById("challengeBtn").addEventListener("click", () => {
-  const text = document.getElementById("challengeText").value.trim();
-  const status = document.getElementById("challengeStatus");
-
-  if (!authenticatedUser) return status.innerText = "❌ No active session found.";
-  if (!text) return status.innerText = "❌ Write your challenge details.";
-
-  const msg = "Contender: " + authenticatedUser.email + "\n\n🎯 Challenge Proof: " + text;
-  const url = "https://wa.me" + encodeURIComponent(msg);
-  window.open(url, "_blank");
-  status.innerText = "✅ Opened in WhatsApp!";
-});
-</script>
+  <footer>
+    &copy; 2026 AllProGamerz &mdash; private friend-group project
+  </footer>
 </body>
 </html>

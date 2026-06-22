@@ -39,7 +39,7 @@ signinBtn.addEventListener("click", () => {
 
       // Wait 1.2 seconds so they see the success message, then redirect to the main app dashboard
       setTimeout(() => {
-        window.location.href = "index.html";
+        window.location.href = "home.html";
       }, 1200);
     } else {
       // Handles 401 unauthenticated errors (e.g. "Please verify your email address first" or wrong pass)

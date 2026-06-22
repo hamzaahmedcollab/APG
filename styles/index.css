@@ -1,167 +1,210 @@
-/* styles/index.css */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0a0a0f;
+  --surface: #12121a;
+  --surface-2: #1a1a26;
+  --border: #222233;
+  --text: #e4e4ec;
+  --text-muted: #8888a0;
+  --accent: #ff4757;
+  --accent-hover: #ff6b81;
+  --green: #22c55e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-    font-family: Arial, sans-serif;
-    background: #0d0d11; /* Deeper midnight gaming black */
-    color: #f0f0f0;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
 }
 
+/* ─── HEADER / NAV ─── */
 header {
-    background: linear-gradient(135deg, #ff4757, #ff6b81);
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
 }
 
-header h1 {
-    margin: 0 0 15px 0;
-    font-size: 28px;
-    letter-spacing: -0.5px;
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.3px;
+  color: var(--text);
+}
+
+.logo span {
+  color: var(--accent);
 }
 
 nav {
-    background: #1a1a24;
-    padding: 5px 15px;
-    border-bottom: 1px solid #2f3542;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 0;
-}
-
-nav li {
-    margin: 10px 15px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 nav a {
-    color: #ffa502;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.2s ease;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background .2s, color .2s;
 }
 
 nav a:hover {
-    color: #ff7f50;
+  background: var(--surface-2);
+  color: var(--text);
 }
 
-.container {
-    max-width: 850px;
-    margin: 40px auto;
-    padding: 0 20px;
-    box-sizing: border-box;
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: background .2s, transform .1s;
 }
 
-section {
-    background: #161622; /* High-contrast card surfaces */
-    padding: 30px;
-    margin: 25px 0;
-    border-radius: 12px;
-    border: 1px solid #232334;
-    text-align: left; /* Left align text content inside dashboards */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+.btn:active {
+  transform: scale(.97);
 }
 
-section h2 {
-    margin-top: 0;
-    color: #ffffff;
-    font-size: 20px;
-    border-left: 4px solid #ff4757;
-    padding-left: 12px;
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
 }
 
-/* Upgraded Input Element matching your layout styles */
-input, textarea {
-    display: block;
-    margin: 15px 0;
-    padding: 12px;
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    border: 1px solid #2f3542;
-    background: #0f0f16;
-    color: #ffffff;
-    font-size: 15px;
-    box-sizing: border-box;
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+.btn-primary:hover {
+  background: var(--accent-hover);
 }
 
-textarea {
-    max-width: 100%;
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
 }
 
-input:focus, textarea:focus {
-    border-color: #1e90ff;
-    box-shadow: 0 0 8px rgba(30, 144, 255, 0.3);
+.btn-ghost:hover {
+  background: var(--surface-2);
+  color: var(--text);
 }
 
-/* Button Elements matching your exact styles */
-button, .btn {
-    display: inline-block;
-    background: #1e90ff;
-    color: #fff;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    margin-top: 10px;
-    margin-right: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 14px;
-    text-decoration: none;
-    transition: background 0.2s ease;
+/* ─── HERO ─── */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 100px 24px 80px;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-button:hover, .btn:hover {
-    background: #3742fa;
+.hero h1 {
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin: 0 0 16px;
+  line-height: 1.15;
 }
 
-#logoutBtn {
-    background: #2f3542;
-    border: 1px solid #475269;
-    padding: 8px 16px;
-    margin: 0;
+.hero h1 span {
+  color: var(--accent);
 }
 
-#logoutBtn:hover {
-    background: #ff4757;
-    border-color: #ff4757;
+.hero p {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin: 0 0 36px;
+  max-width: 520px;
 }
 
-#profileSection {
-    display: none;
-    background: #0f0f16;
-    padding: 20px;
-    margin-top: 15px;
-    border-radius: 8px;
-    border: 1px solid #2f3542;
+.hero .btn-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-#profileInfo {
-    line-height: 1.6;
-    font-size: 15px;
+/* ─── FEATURES ─── */
+.features {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
 }
 
-#editProfile h3 {
-    margin-top: 20px;
-    color: #ffa502;
-    font-size: 16px;
+.feature-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  transition: border-color .3s;
 }
 
+.feature-card:hover {
+  border-color: #333355;
+}
+
+.feature-card .icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.feature-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ─── FOOTER ─── */
 footer {
-    text-align: center;
-    padding: 30px 15px;
-    background: #161622;
-    color: #888;
-    font-size: 13px;
-    line-height: 1.6;
-    border-top: 1px solid #232334;
-    margin-top: 60px;
+  text-align: center;
+  padding: 32px 24px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 600px) {
+  header {
+    padding: 0 16px;
+  }
+  .hero {
+    padding: 60px 16px 40px;
+  }
+  .features {
+    padding: 40px 16px 60px;
+  }
 }

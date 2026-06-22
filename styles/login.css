@@ -33,56 +33,52 @@ body {
   padding: 36px 32px 32px;
   width: 100%;
   max-width: 380px;
-  text-align: center;
 }
 
-.logo {
+.card h1 {
   font-size: 20px;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin: 0 0 4px;
   letter-spacing: -0.3px;
 }
 
-.logo span {
+.card h1 span {
   color: var(--accent);
 }
 
-h1 {
-  font-size: 18px;
-  font-weight: 700;
-  margin: 0 0 8px;
-}
-
-p {
+.card .sub {
   font-size: 14px;
   color: var(--text-muted);
   margin: 0 0 24px;
-  line-height: 1.5;
 }
 
-.email-display {
-  color: var(--text);
-  font-weight: 600;
+.form-group {
+  margin-bottom: 14px;
 }
 
-.pin-input {
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  display: block;
   width: 100%;
-  padding: 14px;
-  font-size: 24px;
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
   background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 8px;
   color: var(--text);
   outline: none;
-  font-family: 'SF Mono', ui-monospace, monospace;
   transition: border-color .2s;
-  margin-bottom: 20px;
+  font-family: inherit;
 }
 
-.pin-input:focus {
+.form-group input:focus {
   border-color: var(--accent);
 }
 
@@ -96,6 +92,7 @@ p {
   border: none;
   cursor: pointer;
   transition: background .2s;
+  text-align: center;
   font-family: inherit;
 }
 
@@ -112,8 +109,38 @@ p {
   transform: scale(.97);
 }
 
-.status-msg {
+.status {
   font-size: 13px;
   margin-top: 14px;
+  text-align: center;
   min-height: 20px;
+}
+
+.card .alt-link {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.card .alt-link a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.card .alt-link a:hover {
+  text-decoration: underline;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--text);
 }

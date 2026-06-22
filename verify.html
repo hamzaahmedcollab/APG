@@ -1,88 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verify Your Account</title>
-    <!-- 🟢 Linking your clean external stylesheet -->
-    <link rel="stylesheet" href="styles/verify.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify — AllProGamerz</title>
+  <link rel="stylesheet" href="styles/verify.css">
 </head>
 <body>
+  <div class="card">
+    <div class="logo">AP<span>G</span></div>
+    <h1>Verify your account</h1>
+    <p>We sent a code to<br><span class="email-display" id="emailTarget">your email</span></p>
 
-    <div class="container">
-        <div class="logo">🛠️ Our Space</div>
-        <h1>Enter Verification Code</h1>
-        <p>We sent a 4-digit code to <br><span id="emailTarget" class="email-display">your email</span></p>
-        
-        <div class="input-group">
-            <input type="text" id="pinInput" placeholder="0000" maxlength="4" autocomplete="off">
-        </div>
-        
-        <button id="verifyBtn">Verify Account</button>
-        
-        <div id="statusMessage" class="status-msg"></div>
-    </div>
+    <input type="text" id="pinInput" class="pin-input" placeholder="0000" maxlength="4" autocomplete="off">
 
-    <script>
-        const status = document.getElementById("statusMessage");
-        const emailTarget = document.getElementById("emailTarget");
+    <button class="btn btn-primary" id="verifyBtn">Verify</button>
+    <div class="status-msg" id="statusMessage"></div>
+  </div>
 
-        const pendingEmail = sessionStorage.getItem("pending_verification_email");
-        
-        if (pendingEmail) {
-            emailTarget.innerText = pendingEmail;
+  <script>
+    const status = document.getElementById('statusMessage');
+    const emailTarget = document.getElementById('emailTarget');
+    const pendingEmail = sessionStorage.getItem('pending_verification_email');
+
+    if (pendingEmail) {
+      emailTarget.innerText = pendingEmail;
+    } else {
+      status.innerHTML = "No email found. <a href='signup.html' style='color:var(--accent);'>Sign up again</a>.";
+      document.getElementById('verifyBtn').disabled = true;
+    }
+
+    document.getElementById('verifyBtn').addEventListener('click', () => {
+      const pin = document.getElementById('pinInput').value;
+      if (pin.length !== 4) {
+        status.innerText = 'Enter a 4-digit code.';
+        status.style.color = '#ef4444';
+        return;
+      }
+
+      status.innerText = 'Verifying...';
+      status.style.color = '#8888a0';
+
+      fetch('https://apg-api.vercel.app/api/verify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: pendingEmail, code: pin })
+      })
+      .then(r => r.json())
+      .then(data => {
+        if (data.status === 'success') {
+          status.innerText = 'Verified!';
+          status.style.color = '#22c55e';
+          sessionStorage.removeItem('pending_verification_email');
+          setTimeout(() => { window.location.href = 'login.html'; }, 1500);
         } else {
-            status.innerHTML = "⚠️ No email found. Please <a href='signup.html' style='color:inherit;'>sign up again</a>.";
-            document.getElementById("verifyBtn").disabled = true;
+          status.innerText = data.message;
+          status.style.color = '#ef4444';
         }
-
-        document.getElementById("verifyBtn").addEventListener("click", () => {
-            const pinCode = document.getElementById("pinInput").value;
-
-            if (pinCode.length !== 4) {
-                status.innerText = "❌ Please enter a complete 4-digit code.";
-                status.style.color = "#ef4444";
-                return;
-            }
-
-            status.innerText = "⏳ Verifying...";
-            status.style.color = "#71717a";
-
-            const payload = {
-                email: pendingEmail,
-                code: pinCode
-            };
-
-              fetch('https://apg-api.vercel.app/api/verify', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    status.innerText = "✅ Account verified successfully!";
-                    status.style.color = "#22c55e";
-                    
-                    sessionStorage.removeItem("pending_verification_email");
-
-                    setTimeout(() => {
-                        window.location.href = "login.html";
-                    }, 1500);
-                } else {
-                    status.innerText = "❌ " + data.message;
-                    status.style.color = "#ef4444";
-                }
-            })
-            .catch(err => {
-                status.innerText = "❌ Network error. Backend is unreachable.";
-                status.style.color = "#ef4444";
-                console.error(err);
-            });
-        });
-    </script>
+      })
+      .catch(() => {
+        status.innerText = 'Network error.';
+        status.style.color = '#ef4444';
+      });
+    });
+  </script>
 </body>
 </html>
-

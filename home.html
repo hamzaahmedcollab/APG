@@ -2,291 +2,171 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>🎮 AllProGamerz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AllProGamerz — Dashboard</title>
   <link rel="icon" type="image/jpg" href="photo.png">
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #121212;
-      color: #f0f0f0;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background: #ff4757;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      background: #2f3542;
-      padding: 15px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 0;
-    }
-
-    nav li {
-      margin: 10px;
-    }
-
-    nav a {
-      color: #ffa502;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    section {
-      background: #1e1e1e;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 8px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #1e90ff;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      margin-top: 10px;
-      cursor: pointer;
-      border: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #2f3542;
-      color: #aaa;
-    }
-
-    #profileSection {
-      display: none;
-      background: #2f3542;
-      padding: 15px;
-      margin-top: 10px;
-      border-radius: 8px;
-    }
-
-    #editProfile input {
-      width: 100%;
-      padding: 8px;
-      margin: 6px 0;
-      border-radius: 6px;
-      border: none;
-      background: #1e1e1e;
-      color: #f0f0f0;
-    }
-
-    #editProfile h3 {
-      margin-top: 10px;
-      color: #ffa502;
-    }
-  </style>
+  <link rel="stylesheet" href="styles/dashboard.css">
 </head>
-
 <body>
 
 <header>
-  <h1>🎮🔥 Welcome to AllProGamerz 🔥🎮</h1>
-  <button id="logoutBtn" class="btn">🚪 Sign Out</button>
+  <h1>AP<span>G</span></h1>
+  <button class="btn btn-danger" id="logoutBtn">Sign out</button>
 </header>
 
-<nav>
-  <ul>
-    <li><a href="#games">👾 Games</a></li>
-    <li><a href="#challenge">🔥 Weekly Challenge</a></li>
-    <li><a href="#prize">🏆 Prize Alerts</a></li>
-    <li><a href="#contact">📞 Contact</a></li>
-  </ul>
-</nav>
+<div class="nav-bar">
+  <a href="Games.html">Games</a>
+  <a href="#challenge">Challenge</a>
+  <a href="#prize">Prizes</a>
+  <a href="#profile">Profile</a>
+  <a href="#request">Request</a>
+  <a href="#contact">Contact</a>
+</div>
 
 <div id="mainWorkspace" class="container" style="display: none;">
 
   <section id="games">
-    <h2>👾 Games</h2>
-    <a class="btn" href="Games.html" target="_blank">🚀 Explore Games</a>
+    <h2>Games</h2>
+    <a href="Games.html" class="btn btn-primary">Browse games</a>
   </section>
 
   <section id="challenge">
-    <h2>🔥 Weekly Challenge</h2>
-    <textarea id="challengeText" style="width:100%" rows="3"></textarea>
-    <input type="file" id="challengeFiles" multiple>
-    <button id="challengeBtn" class="btn">🎯 Submit Challenge</button>
-    <p id="challengeStatus"></p>
+    <h2>Weekly challenge</h2>
+    <div class="form-group">
+      <label for="challengeText">Describe your proof</label>
+      <textarea id="challengeText" rows="3"></textarea>
+    </div>
+    <button class="btn btn-primary" id="challengeBtn">Submit</button>
+    <p class="status" id="challengeStatus"></p>
   </section>
 
   <section id="prize">
-    <h2>🏆 Prize Alerts</h2>
-    <p>🎁 Winners get free custom websites!</p>
+    <h2>Prize alerts</h2>
+    <p style="color: var(--text-muted); font-size: 14px; margin: 0;">Winners get free custom websites.</p>
   </section>
 
-  <section id="contact">
-    <h2>📞 Contact Us</h2>
-    <a class="btn" href="https://wa.me/201110433394" target="_blank">
-      💬 WhatsApp Contact
-    </a>
-  </section>
-
-  <section>
-    <h2>👤 Profile</h2>
-    <button id="viewProfileBtn" class="btn">👁️ View Profile</button>
-
+  <section id="profile">
+    <h2>Profile</h2>
+    <button class="btn btn-ghost" id="viewProfileBtn">View profile</button>
     <div id="profileSection">
-      <p id="profileInfo">⏳ Loading cloud records...</p>
-
-      <a id="inviteBtn" class="btn" href="https://chat.whatsapp.com/HrsiwK7Lz6JGOb4zRo6CYo" target="_blank">
-        📩 Invite Friends
-      </a>
-
-      <div id="editProfile" style="margin-top:15px;">
-        <h3>✏️ Edit Profile</h3>
-        <input type="text" id="editFirstName" placeholder="First Name">
-        <input type="text" id="editLastName" placeholder="Last Name">
-        <input type="email" id="editEmail" placeholder="Email" disabled>
-        <input type="text" id="editPhone" placeholder="Phone">
-        <button id="saveProfileBtn" class="btn">💾 Save Changes</button>
-        <p id="editStatus" style="color:#ffa502;margin-top:10px;"></p>
+      <p id="profileInfo">Loading...</p>
+      <a class="btn btn-ghost" href="https://whatsapp.com" target="_blank" style="margin-top: 12px;">Invite friends</a>
+      <div id="editProfile">
+        <h3>Edit profile</h3>
+        <div class="form-group">
+          <label>First name</label>
+          <input type="text" id="editFirstName" placeholder="First name">
+        </div>
+        <div class="form-group">
+          <label>Last name</label>
+          <input type="text" id="editLastName" placeholder="Last name">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="editEmail" disabled>
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="text" id="editPhone" placeholder="Phone">
+        </div>
+        <button class="btn btn-primary" id="saveProfileBtn">Save</button>
+        <p class="status" id="editStatus"></p>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2>🖥️ Request a Custom Website</h2>
-    <textarea id="Prompt" rows="4" style="width:100%"></textarea>
-    <button id="Btn" class="btn">🚀 Submit Request</button>
-    <p id="Status"></p>
+  <section id="request">
+    <h2>Request a custom website</h2>
+    <div class="form-group">
+      <label for="Prompt">Describe what you want</label>
+      <textarea id="Prompt" rows="4" placeholder="Layout, theme, pages..."></textarea>
+    </div>
+    <button class="btn btn-primary" id="Btn">Submit</button>
+    <p class="status" id="Status"></p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <a class="btn btn-ghost" href="https://wa.me" target="_blank">WhatsApp</a>
   </section>
 
 </div>
 
-<footer>
-  © 2026 AllProGamerz 🎮🔥 <br>
-  🎮 Private friend-group project. Not a commercial service.
-</footer>
+<footer>&copy; 2026 AllProGamerz</footer>
 
 <script>
-// Global object memory placeholder to pass identity fields across elements
 let authenticatedUser = null;
 
-// 1. Core Rule: Intercept execution to lock unlogged access immediately
 function verifySession() {
   fetch('https://apg-api.vercel.app/api/check-session', { credentials: 'include' })
-    .then(response => {
-      if (response.status === 200) {
-        return response.json();
-      } else {
-        window.location.href = "login.html";
-      }
-    })
+    .then(r => r.ok ? r.json() : Promise.reject())
     .then(data => {
       if (data && data.status === 'authenticated') {
         authenticatedUser = data.user;
-        // Slide display layout visible once verified
-        document.getElementById("mainWorkspace").style.display = "block";
+        document.getElementById('mainWorkspace').style.display = 'block';
       }
     })
-    .catch(err => {
-      console.error(err);
-      window.location.href = "login.html";
-    });
+    .catch(() => { window.location.href = 'login.html'; });
 }
 
-// Fire check on script injection layer activation
 verifySession();
 
-// 2. Production Sign Out Hook
-document.getElementById("logoutBtn").addEventListener("click", () => {
-  fetch('https://apg-api.vercel.app/api/logout', { 
-    method: 'POST', 
-    credentials: 'include' 
-  })
-  .then(() => {
-    window.location.href = "login.html";
-  })
-  .catch(() => {
-    window.location.href = "login.html";
-  });
+document.getElementById('logoutBtn').addEventListener('click', () => {
+  fetch('https://apg-api.vercel.app/api/logout', { method: 'POST', credentials: 'include' })
+    .then(() => { window.location.href = 'login.html'; })
+    .catch(() => { window.location.href = 'login.html'; });
 });
 
-// 3. Load dynamic email configurations straight into input fields
 function populateProfileUI() {
   if (!authenticatedUser) {
-    document.getElementById("profileInfo").innerText = "❌ Session lost. Reload.";
+    document.getElementById('profileInfo').innerText = 'Session lost.';
     return;
   }
-  
-  // Renders from database variables
-  document.getElementById("profileInfo").innerHTML =
-    "👤 Authenticated Operative: " + authenticatedUser.email + "<br>" +
-    "🛡️ Status: " + (authenticatedUser.verified ? "✅ Verified Account" : "❌ Suspended Core");
-
-  document.getElementById("editEmail").value = authenticatedUser.email;
+  document.getElementById('profileInfo').innerHTML =
+    'Email: ' + authenticatedUser.email + '<br>' +
+    'Verified: ' + (authenticatedUser.verified ? 'yes' : 'no');
+  document.getElementById('editEmail').value = authenticatedUser.email;
 }
 
-document.getElementById("viewProfileBtn").addEventListener("click", () => {
-  const box = document.getElementById("profileSection");
-  if (box.style.display === "block") {
-    box.style.display = "none";
-    document.getElementById("viewProfileBtn").innerText = "👁️ View Profile";
+document.getElementById('viewProfileBtn').addEventListener('click', () => {
+  const box = document.getElementById('profileSection');
+  if (box.style.display === 'block') {
+    box.style.display = 'none';
+    document.getElementById('viewProfileBtn').innerText = 'View profile';
   } else {
     populateProfileUI();
-    box.style.display = "block";
-    document.getElementById("viewProfileBtn").innerText = "🙈 Hide Profile";
+    box.style.display = 'block';
+    document.getElementById('viewProfileBtn').innerText = 'Hide profile';
   }
 });
 
-// 4. Submit custom webpage request variables over WhatsApp
-document.getElementById("Btn").addEventListener("click", () => {
-  const prompt = document.getElementById("Prompt").value.trim();
-  const status = document.getElementById("Status");
-  
-  if (!authenticatedUser) return status.innerText = "❌ Error: Session unauthorized.";
-  if (!prompt) return status.innerText = "❌ Error: Content payload is blank.";
-  
-  const msg =
-    "👤 Identity Node: " + authenticatedUser.email + "\n\n" +
-    "🖥️ Custom Prompt: " + prompt;
-    
-  const url = "https://wa.me/201110433394?text=" + encodeURIComponent(msg);
-  window.open(url, "_blank");
-  status.innerText = "✅ Action forwarded to WhatsApp!";
+document.getElementById('saveProfileBtn').addEventListener('click', () => {
+  const fn = document.getElementById('editFirstName').value.trim();
+  const ln = document.getElementById('editLastName').value.trim();
+  const ph = document.getElementById('editPhone').value.trim();
+  const s = document.getElementById('editStatus');
+  if (!fn || !ln || !ph) { s.innerText = 'Fill all fields.'; return; }
+  s.innerText = 'Saved.';
 });
 
-// 5. Submit Weekly Challenge logs
-document.getElementById("challengeBtn").addEventListener("click", () => {
-  const text = document.getElementById("challengeText").value.trim();
-  const status = document.getElementById("challengeStatus");
+document.getElementById('Btn').addEventListener('click', () => {
+  const prompt = document.getElementById('Prompt').value.trim();
+  const s = document.getElementById('Status');
+  if (!authenticatedUser) { s.innerText = 'Not logged in.'; return; }
+  if (!prompt) { s.innerText = 'Write something.'; return; }
+  window.open('https://wa.me?text=' + encodeURIComponent(authenticatedUser.email + '\n\n' + prompt), '_blank');
+  s.innerText = 'Opened WhatsApp.';
+});
 
-  if (!authenticatedUser) return status.innerText = "❌ Error: Session unauthorized.";
-  if (!text) return status.innerText = "❌ Error: Request body empty.";
-
-  const msg =
-    "👤 Contender identity: " + authenticatedUser.email + "\n\n" +
-    "🎯 Submission Proof: " + text + "\n\n" +
-    "[Note: Attach game screenshots manually in the WhatsApp view card]";
-
-  const url = "https://wa.me/201144604623?text=" + encodeURIComponent(msg);
-  window.open(url, "_blank");
-  status.innerText = "✅ Match verification submitted!";
+document.getElementById('challengeBtn').addEventListener('click', () => {
+  const text = document.getElementById('challengeText').value.trim();
+  const s = document.getElementById('challengeStatus');
+  if (!authenticatedUser) { s.innerText = 'Not logged in.'; return; }
+  if (!text) { s.innerText = 'Write something.'; return; }
+  window.open('https://wa.me' + encodeURIComponent(authenticatedUser.email + '\n\n' + text), '_blank');
+  s.innerText = 'Opened WhatsApp.';
 });
 </script>
+
 </body>
 </html>
-
