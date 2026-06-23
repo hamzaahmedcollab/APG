@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — AllProGamerz</title>
+  <link rel="icon" href="photo.png">
+  <link rel="stylesheet" href="styles/dashboard.css">
+  <style>
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+    th { color: var(--text-muted); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+    .prompt-cell { max-width: 300px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AP<span>G</span> Admin</h1>
+  </header>
+
+  <div class="container">
+    <div style="display:flex;gap:10px;margin-bottom:20px;">
+      <input type="password" id="masterInput" placeholder="Master password" style="max-width:250px;">
+      <button class="btn btn-primary" id="loadBtn">Load requests</button>
+    </div>
+    <p class="status" id="statusMsg"></p>
+    <div id="tableWrap"></div>
+  </div>
+
+  <script>
+    document.getElementById('loadBtn').addEventListener('click', () => {
+      const master = document.getElementById('masterInput').value;
+      const s = document.getElementById('statusMsg');
+      const wrap = document.getElementById('tableWrap');
+      s.innerText = 'Loading...';
+      fetch('https://apg-api.vercel.app/api/requests?master=' + encodeURIComponent(master))
+        .then(r => { if (!r.ok) throw new Error('Wrong password'); return r.json(); })
+        .then(data => {
+          s.innerText = data.length + ' requests';
+          if (!data.length) { wrap.innerHTML = '<p style="color:var(--text-muted);">No requests yet.</p>'; return; }
+          let html = '<table><thead><tr><th>Date</th><th>Email</th><th>Prompt</th></tr></thead><tbody>';
+          data.forEach(r => {
+            html += '<tr><td>' + new Date(r.created_at).toLocaleString() + '</td><td>' + r.email + '</td><td class="prompt-cell">' + r.prompt + '</td></tr>';
+          });
+          html += '</tbody></table>';
+          wrap.innerHTML = html;
+        })
+        .catch(e => { s.innerText = e.message; wrap.innerHTML = ''; });
+    });
+  </script>
+</body>
+</html>

@@ -156,10 +156,17 @@ document.getElementById('saveProfileBtn').addEventListener('click', () => {
 document.getElementById('Btn').addEventListener('click', () => {
   const prompt = document.getElementById('Prompt').value.trim();
   const s = document.getElementById('Status');
-  if (!authenticatedUser) { s.innerText = 'Not logged in.'; return; }
+  const token = sessionStorage.getItem('token');
+  if (!token) { s.innerText = 'Not logged in.'; return; }
   if (!prompt) { s.innerText = 'Write something.'; return; }
-  window.open('https://wa.me?text=' + encodeURIComponent(authenticatedUser.email + '\n\n' + prompt), '_blank');
-  s.innerText = 'Opened WhatsApp.';
+  fetch('https://apg-api.vercel.app/api/requests', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+    body: JSON.stringify({ prompt })
+  })
+  .then(r => r.json())
+  .then(d => { s.innerText = d.message; })
+  .catch(() => { s.innerText = 'Network error.'; });
 });
 
 document.getElementById('challengeBtn').addEventListener('click', () => {
