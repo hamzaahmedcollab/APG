@@ -170,6 +170,44 @@ document.getElementById('challengeBtn').addEventListener('click', () => {
   window.open('https://wa.me' + encodeURIComponent(authenticatedUser.email + '\n\n' + text), '_blank');
   s.innerText = 'Opened WhatsApp.';
 });
+  document.getElementById('challengeBtn').addEventListener('click', () => {
+  const text = document.getElementById('challengeText').value.trim();
+  const s = document.getElementById('challengeStatus');
+
+  if (!authenticatedUser) {
+    s.innerText = 'Not logged in.';
+    return;
+  }
+  if (!text) {
+    s.innerText = 'Write something.';
+    return;
+  }
+
+  
+  let phone = authenticatedUser.phone ? authenticatedUser.phone.trim() : "";
+  if (!phone.startsWith("+20")) {
+    if (/^0\d{9}$/.test(phone)) {
+      phone = "+2" + phone.substring(1);
+    } else {
+      phone = "+2" + phone;
+    }
+  }
+
+  const phoneRegex = /^\+20\d{10}$/;
+  if (!phoneRegex.test(phone)) {
+    s.innerText = "❌ Invalid phone number. Please update your profile.";
+    return;
+  }
+
+  const message = `${authenticatedUser.firstName} ${authenticatedUser.lastName}\n${authenticatedUser.email}\n${phone}\n${text}`;
+
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappUrl = `https://wa.me/201144604623?text=${encodedMessage}`;
+  window.open(whatsappUrl, "_blank");
+
+  s.innerText = 'Challenge info sent!';
+});
+
 </script>
 
 </body>
